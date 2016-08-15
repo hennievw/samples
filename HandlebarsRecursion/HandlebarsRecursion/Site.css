@@ -1,0 +1,16 @@
+﻿    .main-list {
+        background-color:lightgrey;
+        padding:15px;
+    }
+
+    .mail-list-header {
+        padding-bottom:20px;
+        font-size:15px;
+    }
+
+    .list-item {
+        background-color:white;
+        width:150px;
+        border-radius:25px;
+        padding-left:10px;
+    }
