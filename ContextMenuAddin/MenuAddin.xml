@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>ACBACA1D-6352-4294-87FD-0F56C600203A</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>HVW BLOG</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Menu Sample" />
+  <Description DefaultValue="Menu Sample"/>
+  <IconUrl DefaultValue="~remoteAppUrl/Images/Button32x32.png" />
+  <AppDomains>
+    <AppDomain>SomeDomain</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document" />
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="~remoteAppUrl/Home.html" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+
+    <Description resid="residToolTip" />
+
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+
+          <FunctionFile resid="FunctionFile.Url" />
+
+          <ExtensionPoint xsi:type="ContextMenu">
+            <OfficeMenu id="ContextMenuText">
+              <Control xsi:type="Menu" id="Contoso.TestMenu2">
+                <Label resid="Menu.Custom" />
+                <Supertip>
+                  <Title resid="Menu.Title" />
+                  <Description resid="Menu.Tooltip" />
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="icon_32x32" />
+                  <bt:Image size="32" resid="icon_32x32" />
+                  <bt:Image size="80" resid="icon_32x32" />
+                </Icon>
+                <Items>
+                  <Item id="openTaskPaneId">
+                    <Label resid="Menu.Option1"/>
+                    <Supertip>
+                      <Title resid="Menu.Title" />
+                      <Description resid="Menu.Tooltip" />
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="icon_32x32" />
+                      <bt:Image size="32" resid="icon_32x32" />
+                      <bt:Image size="80" resid="icon_32x32" />
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <TaskpaneId>MyTaskPaneID2</TaskpaneId>
+                      <SourceLocation resid="Taskpane.Url" />
+                    </Action>
+                  </Item>
+
+                  <Item id="execFunctionId">
+                    <Label resid="Menu.Option2"/>
+                    <Supertip>
+                      <Title resid="Menu.Title" />
+                      <Description resid="Menu.Tooltip" />
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="icon_32x32" />
+                      <bt:Image size="32" resid="icon_32x32" />
+                      <bt:Image size="80" resid="icon_32x32" />
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>highlightText</FunctionName>
+                    </Action>
+                  </Item>
+                </Items>
+              </Control>
+            </OfficeMenu>
+          </ExtensionPoint>
+
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon_16x16" DefaultValue="~remoteAppUrl/Images/Button16x16.png"></bt:Image>
+        <bt:Image id="icon_32x32" DefaultValue="~remoteAppUrl/Images/Button32x32.png"></bt:Image>
+        <bt:Image id="icon_80x80" DefaultValue="~remoteAppUrl/Images/Button80x80.png"></bt:Image>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="~remoteAppUrl/Home.html" />
+        <bt:Url id="FunctionFile.Url" DefaultValue="~remoteAppUrl/Functions/FunctionFile.html" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Menu.Title" DefaultValue="Title"></bt:String>
+        <bt:String id="Menu.Custom" DefaultValue="My Custom Menu"></bt:String>
+        <bt:String id="Menu.Option1" DefaultValue="Open Taskpane"></bt:String>
+        <bt:String id="Menu.Option2" DefaultValue="Highlight"></bt:String>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="Menu.Tooltip" DefaultValue="Tooltip"></bt:String>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+
+
+</OfficeApp>
