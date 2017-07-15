@@ -1,0 +1,10 @@
+.container {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+}
+
+.textLabel {
+    font-size: 14px;
+    color: white;
+}
