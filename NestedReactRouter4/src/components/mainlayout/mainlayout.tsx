@@ -2,26 +2,21 @@ import * as React from "react";
 import { Switch, Route } from "react-router";
 import { Sample1 } from "../sample1/sample1";
 import { Sample2 } from "../sample2/sample2";
+import { Link } from "react-router-dom";
 
 export class MainLayout extends React.Component<{}, undefined> {
 
-    private onContactsClickHandler(): void {
-        window.location.hash = "/home/sample1";
-    }
-
-    private onProductsClickHandler(): void {
-        window.location.hash = "/home/sample2";
-    }
-
     public render(): JSX.Element {
+
+        const linkStyle = { color: "rgb(255, 255, 255)", paddingRight: "10px" };
 
         return (
             <div>
                 <div style={{ backgroundColor: 'rgb(24, 103, 126)', height: '60px', color: 'white', padding: '10px' }}>
                     <div>React Router 4 demo
                         <div style={{ paddingTop: '20px' }}>
-                            <button onClick={this.onContactsClickHandler}>Example 1</button>
-                            <button onClick={this.onProductsClickHandler}>Example 2</button>
+                            <Link style={linkStyle} to="/home/sample1">Sample 1</Link>
+                            <Link style={linkStyle} to="/home/sample2">Sample 2</Link>
                         </div>
                     </div>
                 </div>
