@@ -10,6 +10,10 @@ export class Sample1 extends React.Component<{}, undefined> {
 
         const linkStyle = { backgroundColor: "rgb(215, 215, 215)", marginLeft: "5px", height: "25px", width: "60px", color: "black", padding: "10px", cursor: "pointer" };
 
+        const MyTab1 = (): JSX.Element => {
+            return (<Tab1 inputValue="Property for tab 1"></Tab1>)
+        }
+
         return (
             <div>
                 <h1>Sample page 1</h1>
@@ -18,7 +22,7 @@ export class Sample1 extends React.Component<{}, undefined> {
                     <Link style={linkStyle} to="/home/sample1/tab2">Tab 2</Link>
                 </div>
                 <Switch>
-                    <Route path="/home/sample1/tab1" component={Tab1}></Route>
+                    <Route path="/home/sample1/tab1" component={MyTab1}></Route>
                     <Route path="/home/sample1/tab2" component={Tab2}></Route>
                     <Route>
                         <Redirect to="/home/sample1/tab1"></Redirect>
